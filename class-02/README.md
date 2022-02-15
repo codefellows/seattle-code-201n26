@@ -78,3 +78,21 @@ In our code demo today we'll do the following:
 ### CSS Cheatsheet
 
 - [css everything cheatsheet](https://overapi.com/css){:target="_blank"}
+
+### Additional VS Code settingss
+
+Things to update in VS Code settings
+
+- "editor.tabSize" should be set to 2
+- "editor.detectIndentation" should be set to true
+- "editor.wordWrap" should be set to "on"
+- "editor.minimap.enabled" should be set to true
+- "files.autoSave" should be set to "onFocusChange"
+- "eslint.alwaysShowStatus" should be set to true
+- "files.insertFinalNewline" should be set to true
+- "files.trimFinalNewlines" should be set to true
+
+### Additional resources
+
+- [data types code challenge](http://replit.com/@rkgallaway/201-class-01-review#index.js)
+- [HTML5 Outliner](https://gsnedders.html5.org/outliner/)
