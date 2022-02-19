@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 
 h1 {
   font-size: 3rem;
@@ -7,4 +11,55 @@ h2 {
   font-size: 1.2rem;
   color: red;
   margin-bottom: 1rem;
+  /* margin-left: auto;
+  margin-right: auto;
+  width: max-content; */
+  text-align: center;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+.picture {
+  width: 400px;
+  padding: 30px;
+  border: 10px solid red;
+  background-color: darkseagreen;
+}
+
+/* #blockAndInline {
+  border: 2px dashed green;
+} */
+
+.parent {
+  /* overflow: auto; */
+  width: 80%;
+  background-color: antiquewhite;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.parent div {
+  border: 1px solid black;
+  padding: 25px;
+  margin: 25px;
+  display: inline-block;
+  /* float: left; */
+}
+
+/* aside{
+  width: 100%;
+  height: 200px;
+  background-color: pink;
+  clear: both;
+} */
+
+.parent div:first-of-type {
+  background-color: aqua;
+}
+
+p span {
+  color: red;
 }
