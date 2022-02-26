@@ -5,3 +5,62 @@ div, span {
 h1 {
   font-size: 2rem;
 }
+
+.car {
+  border: 2px solid red;
+}
+
+div.car {
+  border-color: green;
+}
+
+div span {
+  background-color: orange;
+}
+
+div > span {
+  background-color: pink;
+}
+
+/*
+  + — Adjacent sibling selector (select an element that iss directly after a particular selector
+  ~ — general sibling selector (selects all the elementss that are silbings of a specified selector
+*/
+
+section ~ span {
+  background-color: magenta;
+}
+
+section + span {
+  background-color: green;
+}
+
+ul li:first-child {
+  color: blue;
+  font-weight: bold;
+}
+
+li:nth-child(2) {
+  color: purple;
+  font-weight: bold;
+}
+
+span:first-of-type {
+  color: white;
+}
+
+ul:hover {
+  background-color: teal;
+}
+
+/*
+  — Psudo Elements — Before and after
+  Adds element to our Docuemnt (DOM)
+*/
+
+ul::after {
+  content: 'ul::after';
+}
+ul::before {
+  content: 'ul::before';
+}
