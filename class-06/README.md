@@ -47,3 +47,7 @@ This CSS tool makes creating layouts much easier. Here are some resources to you
 
 - [Flexbox Froggy](https://flexboxfroggy.com/)
 - [Flexbox Cheatsheet](https://jonitrythall.com/flexbox-cheatsheet)
+
+### Deploying Branches on GitHub Pages
+
+For your Salmon Cookies project you will be working on a separate branch for each lab. [Here is how to deploy a specific branch to GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) so you can show your work.
