@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Table of Musicians</title>
+<style type="text/css">
+    table {
+        border-spacing: 0;
+        border: 0;
+        width: 350px;
+    }
+    table td, table th {
+        padding: 3px;
+        border: solid thin black;
+    }
+    td:n-of-type(2) {
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+    <h1>Musicians</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="20%">First</th>
+                <th width="20%">Last</th>
+                        <th width="60%">Nationality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shania</td>
+                <td>Twain</td>
+                <td>Canadian</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Lenon</td>
+                <td rowspan="2">British</td>
+            </tr>
+            <tr>
+                <td>Paul</td>
+                <td>McCartney</td>
+            </tr>
+            <tr>
+                <td>Billy</td>
+                <td>Joel</td>
+                <td rowspan="3">American</td>
+            </tr>
+            <tr>
+                <td colspan="2">Cher</td>
+            </tr>
+            <tr>
+                <td colspan="2">Madona</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
