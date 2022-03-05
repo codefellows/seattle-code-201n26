@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Table Demo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 300px;
+        }
+
+        table th {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        table td {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        table td, table th {
+            border: thin black solid;
+            padding: 3px 5px;
+        }
+
+        td:last-of-type {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table Demo</h1>
+
+    <table id="musicians">
+        <thead>
+            <tr>
+                <th width="35%">First</th>
+                <th width="35%">Last</th>
+                <th width="30%">Nationality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Shania</td>
+                <td>Twain</td>
+                <td>Canadian</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        // let musicians = document.getElementById('musicians');
+        let musiciansTable = document.querySelector('#musicians tbody');
+
+        function Musician(first_param, last_param, nationality_param) {
+            // this === {}
+            this.first = first_param;
+            this.last = last_param;
+            // this === {first: first_param, last: last_param}
+            this.nationality = nationality_param;
+
+            // this.render = function() {};
+        }
+
+        Musician.prototype.render = function() {
+            let row = document.createElement('tr');
+            musiciansTable.appendChild(row);
+
+            let tdFirst = document.createElement('td');
+            let tdLast = document.createElement('td');
+            let tdNationality = document.createElement('td');
+
+            row.appendChild(tdFirst);
+            row.appendChild(tdLast);
+            row.appendChild(tdNationality);
+
+            tdFirst.textContent = this.first;
+            tdLast.textContent = this.last;
+            tdNationality.textContent = this.nationality;
+        };
+
+        console.log({
+            first: "David",
+            last: "Souther",
+            nationality: "The World",
+        })
+
+        let musiciansArray = [
+            new Musician('John', 'Lenon', 'British'),
+            new Musician('Eric', 'Clapton', 'American'),
+            new Musician('Ringo', 'Starr', 'British'),
+            new Musician('Madonna', '', 'American'),
+            new Musician('Billy', 'Joel', 'American'),
+        ];
+
+        // let first = prompt("Musician first name: ");
+        // let last = prompt("Musician last name: ");
+        // let nationality = prompt("Musician nationality: ");
+        // let newMusician = new Musician(first, last, nationality);
+        // musiciansArray.push(newMusician);
+
+        console.log(musiciansArray);
+
+        for (let i = 0; i < musiciansArray.length; i++) {
+            let musician = musiciansArray[i];
+
+            musician.render();
+        }
+
+    </script>
+</body>
+</html>
