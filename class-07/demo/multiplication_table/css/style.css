@@ -1,0 +1,9 @@
+td, th {
+    border: thin solid black;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+th {
+    font-weight: bold;
+}
