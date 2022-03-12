@@ -25,7 +25,6 @@ h2 {
 }
 
 table {
-  border-spacing: 0;
   width: 100%;
 }
 
@@ -41,4 +40,23 @@ table th {
 
 td:last-of-type {
   text-align: right;
+}
+
+form {
+  width: 80%;
+}
+
+label {
+  display: block;
+  font-size: smaller;
+  margin: 2px 0 4px 0;
+}
+
+input {
+  width: 100%;
+}
+
+aside {
+  display: block;
+  border: 3px solid pink;
 }
