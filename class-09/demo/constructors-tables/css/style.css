@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+  font-family: system-ui, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Permanent Marker", cursive;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 6px;
+}
+
+table {
+  width: 100%;
+}
+
+table td,
+table th {
+  border: thin black solid;
+  padding: 3px 5px;
+}
+
+table th {
+  font-weight: 700;
+}
+
+td:last-of-type {
+  text-align: right;
+}
+
+form {
+  width: 80%;
+}
+
+label {
+  display: block;
+  font-size: smaller;
+  margin: 2px 0 4px 0;
+}
+
+input {
+  width: 100%;
+}
+
+aside {
+  display: block;
+  border: 3px solid pink;
+}

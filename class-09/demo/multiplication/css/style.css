@@ -1,0 +1,27 @@
+* {
+  font-family: system-ui, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 0 auto;
+  width: 540px;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-bottom: 6px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: smaller;
+}
+
+input {
+  width: 100%;
+}
