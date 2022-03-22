@@ -1,5 +1,10 @@
 # Audio/Video, Practical Info, and Getting the Vote Tracker Started
 
+## Class Repls
+
+- [Review-array-includes](https://replit.com/@rkgallaway/201n21-review-array-includes#index.js)
+- [Review-array-includes solution](https://replit.com/@rkgallaway/201n26-class-11-review-solutions#index.js)
+
 ## Overview
 
 This class will be the start of a new project. You will also be learning a new CSS layout with flexbox.
