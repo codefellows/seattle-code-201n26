@@ -1,5 +1,11 @@
 # Adding a chart to the Vote Tracker App
 
+## Class 12 Repls
+
+- [Review-array-includes](https://replit.com/@rkgallaway/201n21-review-array-includes#index.js)
+- [Review-array-includes solution](https://replit.com/@rkgallaway/201n26-class-11-review-solutions#index.js)
+- [More Array Methods](https://replit.com/@rkgallaway/201n46-array-methods#index.js)
+
 ## Overview
 
 In this class you will learn how to utilize a 3rd party library so that you can provide a graphical representation of the click data that is being collected from your vote tracker.
