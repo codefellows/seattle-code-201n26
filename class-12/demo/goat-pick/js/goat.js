@@ -28,6 +28,9 @@ let uniqueIndexes = [];
 function renderGoats() {
   // call the getRandomNumber
 
+  // in busmall we start with three, and then want six unique images.
+  // in goats we start with two, and then want four unique images.
+
   while (uniqueIndexes.length < 4) {
     // not confidednt this numnber is unique here
     let someIndex = getRandomNumber();
@@ -38,8 +41,9 @@ function renderGoats() {
     // confident this is unique now!
     uniqueIndexes.push(someIndex);
   }
-  let goatIndexOne = uniqueIndexes.pop();
-  let goatIndexTwo = uniqueIndexes.pop();
+  console.log('uniqueIndexes:', uniqueIndexes);
+  let goatIndexOne = uniqueIndexes.shift();
+  let goatIndexTwo = uniqueIndexes.shift();
 
   image1.src = allGoats[goatIndexOne].src;
   image2.src = allGoats[goatIndexTwo].src;
