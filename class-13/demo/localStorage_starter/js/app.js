@@ -1,12 +1,11 @@
-'use strict';
+"use strict";
 
 // target our order form from the html
-const orderForm = document.getElementById('orderForm');
-const orders = document.getElementById('orders');
-
+const orderForm = document.getElementById("orderForm");
+const orders = document.getElementById("orders");
 
 // constructor function to create a basic drink
-function Coffee(name, size, milk, isHot, drinkType){
+function Coffee(name, size, milk, isHot, drinkType) {
   this.name = name;
   this.size = size;
   this.isHot = isHot;
@@ -15,14 +14,30 @@ function Coffee(name, size, milk, isHot, drinkType){
 
   // add every drink that gets created into an array
   Coffee.drinks.push(this);
+
+  let coffeeDrinks = JSON.stringify(Coffee.drinks);
+  localStorage.setItem("coffeeStored", coffeeDrinks);
 }
 
 // set the global array to empty
-Coffee.drinks = [];
+// if (JSON.parse(localStorage.getItem("coffeeStored"))) {
+//   Coffee.drinks = JSON.parse(localStorage.getItem("coffeeStored"));
+// } else {
+//   Coffee.drinks = [];
+// }
 
+let stored = JSON.parse(localStorage.getItem("coffeeStored"));
+if (stored) {
+  Coffee.drinks = stored;
+} else {
+  Coffee.drinks = [];
+}
+
+// Coffee.drinks = JSON.parse(localStorage.getItem("coffeeStored")) ??
+renderOrders();
 
 // event handler function to run everytime the form is submitted
-function handleSubmit(event){
+function handleSubmit(event) {
   event.preventDefault();
   console.log(event.target);
 
@@ -31,38 +46,32 @@ function handleSubmit(event){
   const name = drink.name.value;
   const size = drink.size.value;
   const isHot = drink.isHot.value;
-  const dType  = drink.drinkType.value;
+  const dType = drink.drinkType.value;
   const milk = drink.milk.value;
 
   new Coffee(name, size, milk, isHot, dType);
 
   // update the previous orders with the new order
   renderOrders();
-
 }
 
-
-function renderOrders(){
+function renderOrders() {
   // clear all my current uls to prevent duplicate information
-  orders.textContent = '';
+  orders.textContent = "";
 
   // go through the array and output the details of each drink in the array
-  for(let i = 0; i < Coffee.drinks.length; i++){
-    const drinkLI = document.createElement('li');
-    const infoP = document.createElement('p');
+  for (let i = 0; i < Coffee.drinks.length; i++) {
+    const drinkLI = document.createElement("li");
     let temp;
-    if(Coffee.drinks[i].isHot === 'on'){
-      temp = 'cold';
-    } else{
-      temp = 'hot';
+    if (Coffee.drinks[i].isHot === "on") {
+      temp = "cold";
+    } else {
+      temp = "hot";
     }
-    infoP.textContent = `${Coffee.drinks[i].name} orderd a ${temp} ${Coffee.drinks[i].size} ${Coffee.drinks[i].drinkType} with ${Coffee.drinks[i].milk}`;
-    drinkLI.appendChild(infoP);
+    drinkLI.textContent = `${Coffee.drinks[i].name} ordered a ${temp} ${Coffee.drinks[i].size} ${Coffee.drinks[i].drinkType} with ${Coffee.drinks[i].milk} milk`;
     orders.appendChild(drinkLI);
   }
 }
 
 // Add an event listener to the submit button
-orderForm.addEventListener('submit', handleSubmit);
-
-
+orderForm.addEventListener("submit", handleSubmit);
