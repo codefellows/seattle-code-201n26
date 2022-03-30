@@ -1,24 +1,36 @@
-'use strict';
+"use strict";
 
-const allCats = [];
-const catform = document.getElementById('catform');
-const catlist = document.getElementById('catlist');
+let catsList = document.getElementById("catlist");
 
-function Cat(name){
+let allCats = [];
+function Cat(name) {
   this.name = name;
-  this.render = function(){
-    const listItem = document.createElement('li');
-    listItem.textContent = this.name;
-    catlist.appendChild(listItem);
-  },
   allCats.push(this);
 }
 
-function handleCatSubmit(e){
-  e.preventDefault();
-  const newCat = new Cat(e.target.kitteh.value);
-  catform.reset();
-  newCat.render();
-  localStorage.cats = JSON.stringify(allCats);
-  console.log('this is what is in local storage', localStorage.cats);
-}
+Cat.prototype.render = function () {
+  let li = document.createElement("li");
+  li.textContent = this.name;
+  catsList?.appendChild(li);
+};
+
+Cat.showAll = function () {
+  for (let i = 0; i < allCats.length; i++) {
+    let cat = allCats[i];
+    cat.render();
+  }
+};
+
+Cat.saveAll = function () {
+  let stringCats = JSON.stringify(allCats);
+  localStorage.setItem("allCats", stringCats);
+};
+
+Cat.loadAll = function () {
+  allCats = [];
+  let loadedCats = JSON.parse(localStorage.getItem("allCats")) ?? [];
+  for (let i = 0; i < loadedCats.length; i++) {
+    let name = loadedCats[i].name;
+    new Cat(name);
+  }
+};

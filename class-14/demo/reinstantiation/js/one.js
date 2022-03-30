@@ -1,12 +1,16 @@
-'use strict';
+"use strict";
 
-if (localStorage.cats) {
-  const catsFromLS = JSON.parse(localStorage.cats);
-  // catsFromLS is now an array of generic objects
-  for (let i = 0; i < catsFromLS.length; i++) {
-    new Cat(catsFromLS[i].name);
-    allCats[i].render();
-  }
+Cat.loadAll();
+Cat.showAll();
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let catName = event.target.kitty.value;
+  let newCat = new Cat(catName);
+  newCat.render();
+  Cat.saveAll();
 }
 
-catform.addEventListener('submit', handleCatSubmit);
+document.getElementById("catform")?.addEventListener("submit", handleSubmit);
+
+// TODO: Handle removing cat from array
